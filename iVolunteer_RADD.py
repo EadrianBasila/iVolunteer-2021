@@ -106,8 +106,8 @@ def attendanceCheck(qrData):
 
         else:
             i += 1
-win = 0
-while win != 1:
+
+while True:
     success, img = cap.read()
 
     for qrcode in decode(img):
@@ -134,8 +134,6 @@ while win != 1:
         cv2.putText(img,qrStatus,(pts2[0],pts2[1]),cv2.FONT_HERSHEY_SIMPLEX, 0.9,polyColor,2)
 
     cv2.imshow('iVolunteer ScanQR', img)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-    win = 1
+    cv2.waitKey(1)
 
-print("End of Program.")
+
